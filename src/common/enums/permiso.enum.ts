@@ -1,0 +1,7 @@
+export enum Permison{
+    READ = 'READ',
+    WRITE = 'WRITE',
+    UPDATE = 'UPDATE',
+    DELETE = 'DELETE',
+    REGISTRAR_DEPORTISTA= 'REGISTRAR_DEPORTISTA'
+}
