@@ -4,12 +4,15 @@ import { CreateContactoDto } from './dto/create-contacto.dto';
 import { UpdateContactoDto } from './dto/update-contacto.dto';
 import { Authen } from '../auth/decorators/auth.decoretors';
 import { RoleType } from '../common/enums/tiporole.enum';
+import { ApiBearerAuth } from '@nestjs/swagger';
+import { Permison } from 'src/common/enums/permiso.enum';
 
 @Controller('contacto')
 export class ContactoController {
   constructor(private readonly contactoService: ContactoService) {}
 
-  
+  @ApiBearerAuth('mi secreto')
+  @Authen(RoleType.ADMIN, Permison.WRITE)
   @Post()
   create(@Body() createContactoDto: CreateContactoDto) {
     return this.contactoService.create(createContactoDto);

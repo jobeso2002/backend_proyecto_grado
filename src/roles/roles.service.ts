@@ -34,8 +34,8 @@ export class RolesService {
     return this.RoleRepository.findOneBy({name})    
   }
 
-  findAll() {
-    return `This action returns all roles`;
+  async findAll() {
+    return await this.RoleRepository.find();
   }
 
   findOne(id: number) {

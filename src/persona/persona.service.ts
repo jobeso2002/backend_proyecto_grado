@@ -59,8 +59,8 @@ export class PersonaService {
     return { findUser, roles_permision };
   }
 
-  findAll() {
-    return `This action returns all persona`;
+  async findAll() {
+    return await this.personaRepository.find()
   }
 
   findOne(id: number) {

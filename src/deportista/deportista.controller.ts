@@ -5,12 +5,14 @@ import { UpdateDeportistaDto } from './dto/update-deportista.dto';
 import { RoleType } from '../common/enums/tiporole.enum';
 import { Authen } from '../auth/decorators/auth.decoretors';
 import { Permison } from '../common/enums/permiso.enum';
+import { ApiBearerAuth } from '@nestjs/swagger';
 
 @Controller('deportista')
 export class DeportistaController {
   constructor(private readonly deportistaService: DeportistaService) {}
 
-  
+  @ApiBearerAuth('mi secreto')
+  @Authen(RoleType.ADMIN, Permison.WRITE)
   @Post()
   create(@Body() createDeportistaDto: CreateDeportistaDto) {
     return this.deportistaService.create(createDeportistaDto);

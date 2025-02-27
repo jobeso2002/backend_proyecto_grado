@@ -7,7 +7,7 @@ export class CreateRoleDto {
     @IsEnum(RoleType, {message:"tipo de rol no encontrado"})
     name: RoleType;
     
-    @ApiProperty({example: 1})
+    @ApiProperty({example: [1]})
     @IsArray()
     @IsNotEmpty()
     permisionId: number[];

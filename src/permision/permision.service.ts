@@ -17,8 +17,8 @@ export class PermisionService {
     return this.PermisionRepository.save(permiso) 
   }
 
-  findAll() {
-    return `This action returns all permision`;
+  async findAll() {
+    return await this.PermisionRepository.find()
   }
 
   async findOne(id: number[]) {

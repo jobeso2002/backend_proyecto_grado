@@ -1,5 +1,5 @@
 
-import { IsDate, IsOptional, IsString, MinLength } from 'class-validator';
+import { IsDate, IsInt, IsOptional, IsString, MinLength } from 'class-validator';
 
 export class UpdateContactoDto{
     
@@ -15,5 +15,7 @@ export class UpdateContactoDto{
     @MinLength(1)
     @IsOptional()
     barrio: string;
-    
+    @IsOptional()
+    @IsInt()
+    deportistaId: number;
 }

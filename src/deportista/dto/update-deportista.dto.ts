@@ -1,5 +1,5 @@
 
-import { IsDate, IsNumber, IsOptional, IsPositive, IsString, MinLength } from 'class-validator';
+import { IsInt, IsNumber, IsOptional, IsPositive, IsString, MinLength } from 'class-validator';
 
 export class UpdateDeportistaDto{
     @IsString()
@@ -14,4 +14,10 @@ export class UpdateDeportistaDto{
     @IsPositive()
     @IsOptional()
     numero_camisa: number;
+    @IsOptional()
+    @IsInt()
+    id_club: number;
+    @IsOptional()
+    @IsInt()
+    id_persona: number;
 }
